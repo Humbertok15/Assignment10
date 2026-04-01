@@ -84,6 +84,14 @@ app.get('/', (req, res) => {
 
 // AUTHENTICATION ROUTES
 
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    message: 'API is running successfully 🚀',
+    timestamp: new Date()
+  });
+});
+
 // POST /api/register - Register new user
 app.post('/api/register', async (req, res) => {
     try {
